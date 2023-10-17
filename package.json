@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisset-Mejia/final-project-express.git"
+  },
   "keywords": [
     "API",
     "rest",
@@ -13,6 +17,10 @@
   ],
   "author": "Lisset Mejía, Daniela Santos, Kenia Vazquez",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisset-Mejia/final-project-express/issues"
+  },
+  "homepage": "https://github.com/Lisset-Mejia/final-project-express#readme",
   "dependencies": {
     "express": "^4.18.2"
   }
