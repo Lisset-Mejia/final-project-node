@@ -17,7 +17,7 @@ function init() {
 }
 
 function loadEmployee() {
-    axios.get(url + "/employees", headers) // REVISAR
+    axios.get(url + "/employees", headers)
     .then(function(res) {
         console.log(res);
         displayEmployee(res.data.message);
@@ -26,9 +26,9 @@ function loadEmployee() {
     })
 }
 
-function displayEmploye(employees) { //REVISAR
+function displayEmployee(employees) {
     var body = document.querySelector("body");
-    for(var i = 0; i < employees.length; i++) { //REVISAR
-        body.innerHTML += <h3>${employees[i].name}</h3>; //REVISAR
+    for(var i = 0; i < employees.length; i++) {
+        body.innerHTML += <h3>${employees[i].name}</h3>;
     }
 }
