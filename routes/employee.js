@@ -60,11 +60,13 @@ employee.patch("/:id([0-9]{1,3})", async (req, res, next) => {
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
 });
 
+// Mostrar todos los empleados
 employee.get('/', async (req, res, next) => {
     const emp = await db.query("SELECT * FROM employees");
     return res.status(200).json({ code: 1, message: emp });
 });
 
+//Mostra por ID
 employee.get('/:id([0-9]{1,3})', async (req, res, next) => {
     const id = req.params.id;
     // CAMBIAR DE ACUERDO A LOS EMPLEADOS EN LA BASE DE DATOS
@@ -75,6 +77,7 @@ employee.get('/:id([0-9]{1,3})', async (req, res, next) => {
     return res.status(404).send({ code: 404, message: "Empleado no encontrado" });
 });
 
+//Mostrar por Nombre
 employee.get('/:name([A-Za-z]+)', async (req, res, next) => {
     // Condicion ? valor si verdadero: valor si falso
     const name = req.params.name;
