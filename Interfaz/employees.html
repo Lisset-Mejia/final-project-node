@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Recursos Humanos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/employees.css">
+</head>
+<body>
+    <div class="cuerpo">
+        <div class="inicio">
+            <div class="inicio2">
+                <div class="inicioprimera">
+                    <h1>Sistema de Recursos Humanos</h1>
+                </div>
+                <button class="agregar boton">Agregar</button>
+                <button class="actualizar boton">Modificar</button>
+                <button class="eliminar boton">Eliminar</button>
+                <br>
+                <h2>Buscar por nombre</h2>
+                <br>
+                <div class="barra">
+                    <input id="buscarnombre" type="text">
+                    <button class="buscar btn btn-primary" onclick="buscarEmpleados()">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <h2>Empleado</h2>
+        <br>
+        <div class="resultados" style="display: none;"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <script src="js/buscar.js"></script>
+    <script>
+        function buscarEmpleados() {
+            const resultados = document.querySelector('.resultados');
+            resultados.style.display = 'block'; 
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
