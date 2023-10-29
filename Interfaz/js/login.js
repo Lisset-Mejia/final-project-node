@@ -1,19 +1,14 @@
 window.onload = init;
+function init(){
 
-function init() {
-    if(!localStorage.getItem("token")) {
         document.querySelector('.btn-secondary').addEventListener('click', function() {
             window.location.href = "signin.html"
         });
 
         document.querySelector('.btn-primary').addEventListener('click', login);
-    }
-    else {
-        window.location.href = "admin.html";
-    }
-}
+} 
 
-function login() {
+function login(){
     var mail = document.getElementById('input-mail').value;
     var pass = document.getElementById('input-password').value;
 
@@ -25,14 +20,13 @@ function login() {
             user_password: pass
         }
     }).then(function(res) {
-        if(res.data.code === 200) {
+        if(res.data.code == 200){
             localStorage.setItem("token", res.data.message);
-            window.location.href = "admin.html"
-        }
-        else {
+            window.location.href = "employees.html"
+        }else{
             alert("Usuario y/o contraseña incorrectos");
         }
-    }).catch(function(err) {
+    }).catch(function(err){
         console.log(err);
     })
 }

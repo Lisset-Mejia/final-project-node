@@ -6,7 +6,7 @@ const app = express();
 const employee = require('./routes/employee');
 
 // falta hacerlo 
-const user = require('./routes/user')
+const user = require('./routes/user');
 
 //Middleware
 const auth = require('./middleware/auth');
@@ -28,3 +28,4 @@ app.use(notFound);
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running...");
 });
+

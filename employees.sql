@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2023 a las 21:10:09
+-- Tiempo de generación: 26-10-2023 a las 02:12:57
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `last_name` varchar(20) NOT NULL,
-  `phone` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `phone` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `address` varchar(500) NOT NULL
+  `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,9 +41,31 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`employee_id`, `name`, `last_name`, `phone`, `email`, `address`) VALUES
-(1, 'Lisset', 'Mejía', '44212884853', 'lisset_mejia@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.'),
-(2, 'Kenia', 'Vázquez', '4427778694', 'kenia_vaz@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.'),
-(3, 'Daniela', 'Santos', '4425972947', 'daniela_santos@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.');
+(1, 'Daniela', 'Santos', '4426897885', 'daniela_santos@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.'),
+(2, 'Liss', 'Mejía', '4427895168', 'liss@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.'),
+(3, 'Kenia', 'Vázquez', '4427864896', 'kenia_vazquez@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.'),
+(4, 'Hola', 'Prueba', '123456789', 'estaesprueba@gmail.com', 'Av. de las Ciencias S/N, 76230 Juriquilla, Qro.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `user_mail` varchar(50) NOT NULL,
+  `user_password` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_mail`, `user_password`) VALUES
+(2, 'Prueba1', 'prueba1@gmail.com', '1234'),
+(3, 'Administrador RH', 'admin@gmail.com', '12345');
 
 --
 -- Índices para tablas volcadas
@@ -56,6 +78,12 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`employee_id`);
 
 --
+-- Indices de la tabla `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -63,7 +91,13 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
